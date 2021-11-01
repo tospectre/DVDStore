@@ -22,10 +22,11 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
         this.movieRepository = movieRepository;
     }
 
-    public void add(Movie movie) {
+    public Movie add(Movie movie) {
         movie.setId(++lastNumber);
         movies.add(movie);
         System.out.println("A new movie " + movie.getTitle() + " has been added");
+        return movie;
     }
 
     @Override
